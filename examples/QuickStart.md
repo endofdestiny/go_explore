@@ -10,8 +10,12 @@
 
 ### GO workspace path
 If no GOPATH env var is set, it is assumed to be $HOME/go
-edit ~/.bash_profile       export GOPATH=$HOME/go
-source .bash_profile
+ - edit ~/.bash_profile       
+ - export GOPATH=$HOME/go 
+ - source .bash_profile
+
+export GOPATH=$(go env GOPATH)
+
 
 
 ### setting up sublime text editor with GO
@@ -26,5 +30,10 @@ https://play.golang.org/
 
 ### building
 `go build` inside of a directory will build an executable with the name of that directory
-    - go install
-    - go clean
+
+### installing
+`go install github.com/user/hello`  will install the executable into the GOPATH/bin directory.
+(This assumes that the GOPATH has been setup correctly, as in [the official docs](https://golang.org/doc/code.html))
+
+
+
